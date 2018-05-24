@@ -19,7 +19,7 @@ resource "tls_private_key" "kp-create_nexus" {
   algorithm = "RSA"
 
   provisioner "local-exec" {
-    command = "echo '${tls_private_key.kp-create_nexus.private_key_pem}' > ${path.cwd}/custom/keys/nexus"
+    command = "echo '${tls_private_key.kp-create_nexus.private_key_pem}' > ${path.cwd}/outputs/kp_nexus"
   }
 }
 
