@@ -1,0 +1,28 @@
+[
+  {
+    "name": "nexus-node",
+    "image": "sonatype/nexus3",
+    "memoryReservation": 2048,
+    "essential": true,
+    "portMappings" : [
+      {
+        "containerPort": 8081,
+        "hostPort" : 0,
+        "protocol" : "tcp"
+      }
+    ],
+    "mountPoints" : [
+      {
+        "sourceVolume" : "nexus-data",
+        "ContainerPath" : "/nexus-data"
+      }
+    ],
+    "ulimits": [
+      {
+        "softLimit": 65536,
+        "hardLimit": 65536,
+        "name": "nofile"
+      }
+    ]
+  }
+]
