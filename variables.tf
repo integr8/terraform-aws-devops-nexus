@@ -1,11 +1,12 @@
 variable "availability-zones" {
-  type = "list"
+  type = list(string)
 }
 
-variable "vpc-id" {}
+variable "vpc-id" {
+}
 
 variable "subnets" {
-  type = "list"
+  type = list(string)
 }
 
 variable "cluster-name" {
@@ -23,3 +24,4 @@ variable "ami" {
 variable "instance-type" {
   default = "t2.medium"
 }
+
